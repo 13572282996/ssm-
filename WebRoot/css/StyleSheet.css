@@ -1,0 +1,59 @@
+body { margin:0px; padding:0px; font-size:14px; color:#666666}
+
+.big{ width:1024px; margin:0px auto; border:solid 0px red }
+.topbg{ height:138px; width:100%; background:url(../images/top_bg.jpg)}
+.topbg div{ height:138px; width:1024px; margin:0px auto; background:url(../images/logo_bg.png)no-repeat;}
+.topbg div h1{ color:white; font-family:黑体; font-size:40px; display:block; padding-top:30px}
+ul{ list-style:none; padding:0px; margin:0px}
+#menu{  height:43px; background:url(../images/nav_bg.jpg);  border-bottom:solid 1px #ffffff; width:100%}
+#menu div{ height:138px; width:1024px; margin:0px auto; overflow:hidden }
+#menu ul{ padding-left:30px}
+#menu li{ float:left; padding:10px; width:118px; height:42px; text-align:center; color:#017dc3}
+
+
+#menu li a,#menu li a:visited{ color:White; font-weight:bold; display:block; text-decoration:none;}
+
+.map{    height:41px;  background-image:url(../images/mapbg.png); background-position:left; border:solid 0px #DCDCDC}
+.map b{ color:White; display:block; height:36px; text-align:center; padding-top:7px }
+.mainborder{width:100%; border:solid 1px #CCCCCC; overflow:hidden; padding:10px 0px}
+td{ vertical-align:top}
+p{ line-height:22px}
+.foot{ background:url(../images/1_13.jpg); height:80px; text-align:center}
+.foot a{ color:#666666; text-decoration:none; display:block; padding-top:40px}
+.content{ line-height:22px; text-align:left; display:block; width:750px; padding:30px 20px}
+/*左侧区域*/
+
+.leftborder{ border:solid 1px #CCCCCC; vertical-align:top; margin-top:10px}
+.leftborder span div{ width:100%; margin:10px 0px; text-align:center}
+.lefttop{ width:198px;  background-image:url(../images/mapbg.png); height:41px; width:100%; text-align:left}
+.lefttop b{ color:White; display:block; padding-top:7px; padding-left:20px}
+.leftborder .typeul li{ border-bottom:dashed 1px #CCCCCC; width:99%; text-align:left; padding-top:8px;}
+.leftborder .typeul li a{ display:block; padding-left:10px; padding-bottom:10px; color:#808080; text-decoration:none; font-size:15px;}
+
+/*内容区域*/
+.imglistul{ overflow:hidden}
+.imglistul li{ width:30%; text-align:center; float:left; margin:10px}
+.imglistul li img{ width:90%; padding:5px; border:solid 1px #CCCCCC; height:150px}
+.imglistul li a{text-decoration:none; display:block; padding-top:10px; color:#666666}
+
+
+/*内容区域（带图样式，左右格式）*/
+.imglistul_news li{ width:100%; text-align:left;  margin:10px 0px; overflow:hidden}
+.imglistul_news li img{ width:150px; padding:5px; border:solid 1px #CCCCCC; float:left}
+.imglistul_news li a{text-decoration:none; display:block; padding-top:10px; color:#004276}
+.imglistul_news p{ color:#666666; font-size:12px; text-indent:2em}
+
+/*内容区域*/
+.imglistul li{ width:30%; text-align:center; float:left; margin:10px}
+.imglistul li img{ width:90%; padding:5px; border:solid 1px #CCCCCC; height:150px}
+.imglistul li a{text-decoration:none; display:block; padding-top:10px; color:#666666}
+
+/*祥情页*/
+#line{border-bottom:solid 1px #CCCCCC; padding-bottom:8px; width:100%; color:#666666; text-align:center}
+#line span{ display:inline-block; padding-right:15px}
+
+
+
+.jinmes{  overflow:hidden}
+.jinmes li{ border-bottom:dashed 0px #CCCCCC; width:450px; text-align:left; padding-top:15px;}
+

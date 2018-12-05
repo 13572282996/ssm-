@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.java.dao.BuyMapper" >
+  <resultMap id="BaseResultMap" type="com.java.model.Buy" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="Client_ID" property="clientId" jdbcType="INTEGER" />
+    <result column="Thing_ID" property="thingId" jdbcType="INTEGER" />
+    <result column="InTime" property="intime" jdbcType="TIMESTAMP" />
+    <result column="Num" property="num" jdbcType="INTEGER" />
+    <result column="ShopId" property="shopId" jdbcType="INTEGER" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="get_where" >
+    <where>
+    	<if test="shopId!=null and shopId!=''">
+	        	AND shopId= #{shopId,jdbcType=INTEGER}
+      </if>
+      <if test="clientId!=null and clientId!=''">
+	        	AND Client_ID= #{clientId,jdbcType=INTEGER}
+      </if>
+      <if test="state!=null">
+	        	AND state= #{state,jdbcType=INTEGER}
+      </if>
+    </where>
+  </sql>
+  <sql id="setpage">
+	<if test="page!=null">
+	    order by #{page.order,jdbcType=VARCHAR}
+	    LIMIT #{page.sum,jdbcType=INTEGER}, #{page.pagesize,jdbcType=INTEGER}
+    </if>
+</sql>
+<select id="Get" resultMap="BaseResultMap" parameterType="com.java.model.Buy">
+    select * from buy_View
+  	<include refid="get_where" />
+    <include refid="setpage" />
+    </select>
+    <select id="GetCount"  parameterType="com.java.model.Buy" resultType="java.lang.Integer">
+    select count(*) 
+    from buy_View
+    <include refid="get_where" />
+  </select>
+  
+  <select id="GetByID" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from buy
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="Del" parameterType="java.lang.Integer" >
+    delete from buy
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="Add" parameterType="com.java.model.Buy" >
+    insert into buy (ID, Client_ID, Thing_ID, 
+      InTime, Num, state
+      )
+    values (#{id,jdbcType=INTEGER}, #{clientId,jdbcType=INTEGER}, #{thingId,jdbcType=INTEGER}, 
+      now(), 1,0
+      )
+  </insert>
+   <update id="EditState" parameterType="com.java.model.Buy" >
+    update buy
+    set state = #{state,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="Edit" parameterType="com.java.model.Buy" >
+    update buy
+    set Client_ID = #{clientId,jdbcType=INTEGER},
+      Thing_ID = #{thingId,jdbcType=INTEGER},
+      InTime = #{intime,jdbcType=TIMESTAMP},
+      Num = #{num,jdbcType=INTEGER},
+      state = #{state,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
